@@ -18,7 +18,7 @@ git config --global user.name "thomabir"
 git config --global user.email "thomabir@phys.ethz.ch"
 
 # basics
-sudo apt --assume-yes install build-essential unzip
+sudo apt --assume-yes install build-essential cmake unzip
 mkdir ~/code
 
 # Iosevka font
