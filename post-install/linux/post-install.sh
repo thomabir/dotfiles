@@ -73,3 +73,32 @@ sudo make install
 
 # clean up
 rm -r ~/Downloads/emacs-29.1/
+
+#
+# SystemVerilog development tools
+#
+
+# Xilinx Vivado & Vitis
+# see Xilinx website, login required
+
+# verilator
+sudo apt -y install verilator
+
+# bazel (to build verible)
+# instructions: https://bazel.build/install/ubuntu
+sudo apt install apt-transport-https curl gnupg -y
+curl -fsSL https://bazel.build/bazel-release.pub.gpg | gpg --dearmor >bazel-archive-keyring.gpg
+sudo mv bazel-archive-keyring.gpg /usr/share/keyrings
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/bazel-archive-keyring.gpg] https://storage.googleapis.com/bazel-apt stable jdk1.8" | sudo tee /etc/apt/sources.list.d/bazel.list
+sudo apt update && sudo apt -y install bazel
+
+# Verible verilog tools
+# instructions: https://github.com/chipsalliance/verible#developers-welcome
+cd ~/Downloads
+git clone https://github.com/chipsalliance/verible.git
+cd verible
+bazel build -c opt //...
+bazel run -c opt :install -- -s /usr/local/bin
+bazel test -c opt //...
+rm -rf ~/Downloads/verible
+
