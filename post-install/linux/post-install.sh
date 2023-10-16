@@ -17,6 +17,12 @@ git config --global credential.helper store
 git config --global user.name "thomabir"
 git config --global user.email "thomabir@phys.ethz.ch"
 
+# authenticate with git
+cd ~/Downloads
+git clone https://github.com/thomabir/roam.git
+# enter username and password
+rm -rf roam
+
 # basics
 sudo apt --assume-yes install build-essential cmake unzip
 mkdir ~/code
