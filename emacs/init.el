@@ -5,12 +5,12 @@
 (setq display-time-default-load-average nil) ; this information is useless for most
 
 ;; Automatically reread from disk if the underlying file changes
-(setq auto-revert-interval 1)
-(setq auto-revert-check-vc-info t)
-(global-auto-revert-mode)
+;; (setq auto-revert-interval 1)
+;; (setq auto-revert-check-vc-info t)
+;; (global-auto-revert-mode)
 
 ;; Save history of minibuffer
-(savehist-mode)
+;; (savehist-mode)
 
 ;; No double space after end of sentence
 (setq sentence-end-double-space nil)
@@ -44,10 +44,6 @@
 
 (keymap-set minibuffer-mode-map "TAB" 'minibuffer-complete) ; TAB acts more like how it does in the shell
 
-;; For a fancier built-in completion option, try ido-mode or fido-mode. See also
-;; the file extras/base.el
-;(fido-vertical-mode)
-;(setq icomplete-delay-completions-threshold 4000)
 
 
 ;;;   Interface enhancements/defaults
@@ -215,8 +211,6 @@
 
 
 ;;;   Built-in config for development
-
-
 (use-package emacs
   :config
   ;; Treesitter config
@@ -226,10 +220,6 @@
   (setq major-mode-remap-alist
         '((yaml-mode . yaml-ts-mode)
           (bash-mode . bash-ts-mode)
-          (js2-mode . js-ts-mode)
-          (typescript-mode . typescript-ts-mode)
-          (json-mode . json-ts-mode)
-          (css-mode . css-ts-mode)
           (python-mode . python-ts-mode)))
   :hook
   ;; Auto parenthesis matching
@@ -237,25 +227,15 @@
 
 
 ;;; Magit
-
-
 (use-package magit
   :ensure t
   :bind (("s-g" . magit-status)
          ("C-c g" . magit-status)))
 
 
-;;;   Common file types
-
-
+;;;  Markdown 
 (use-package markdown-mode
   :hook ((markdown-mode . visual-line-mode)))
-
-(use-package yaml-mode
-  :ensure t)
-
-(use-package json-mode
-  :ensure t)
 
 
 ;;;   Eglot
