@@ -48,8 +48,18 @@ unzip super-ttc-iosevka-26.3.3.zip
 mkdir -p ~/.fonts/truetype/iosevka
 cp iosevka.ttc ~/.fonts/truetype/iosevka/
 sudo fc-cache -f -v
-rm iosevka.ttc
-rm super-ttc-iosevka-26.3.3.zip
+rm ~/Downloads/iosevka.ttc
+rm ~/Downloads/super-ttc-iosevka-26.3.3.zip
+
+# Libertinus font
+cd ~/Downloads
+wget https://github.com/alerque/libertinus/releases/download/v7.040/Libertinus-7.040.zip
+unzip Libertinus-7.040.zip
+mkdir -p ~/.fonts/opentype/libertinus
+cp -r Libertinus-7.040/static//OTF/*.otf ~/.fonts/opentype/libertinus/
+sudo fc-cache -f -v
+rm ~/Downloads/Libertinus-7.040.zip
+rm -r ~/Downloads/Libertinus-7.040/
 
 #
 # Emacs 29.1
