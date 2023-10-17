@@ -43,14 +43,14 @@ rm super-ttc-iosevka-26.3.3.zip
 #
 
 # prepare
-sudo apt  --assume-yes install libxpm-dev libjpeg-dev libgif-dev libtiff-dev \
+sudo apt  -y install libxpm-dev libjpeg-dev libgif-dev libtiff-dev \
     libgnutls28-dev libgtk-3-dev libncurses-dev
-sudo apt build-dep emacs
-sudo apt --assume-yes install libgccjit0 libgccjit-10-dev libjansson4 libjansson-dev \
-    gnutls-bin libtree-sitter-dev gcc-10 imagemagick libmagick++-dev \
+sudo apt -y build-dep emacs
+sudo apt -y install libgccjit0 libgccjit-11-dev libjansson4 libjansson-dev \
+    gnutls-bin libtree-sitter-dev gcc-11 imagemagick libmagick++-dev \
     libwebp-dev webp libxft-dev libxft2
-export CC=/usr/bin/gcc-10
-export CXX=/usr/bin/gcc-10
+export CC=/usr/bin/gcc-11
+export CXX=/usr/bin/gcc-11
 
 # download
 cd ~/Downloads
