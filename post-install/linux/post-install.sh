@@ -64,10 +64,10 @@ cd emacs-29.1
 ./configure --with-native-compilation=aot --with-imagemagick --with-json \
     --with-tree-sitter --with-xft
 make -j$(nproc)
-sudo make install
+
 
 # clean up
-rm -r ~/Downloads/emacs-29.1/
+rm -rf ~/Downloads/emacs-29.1/
 
 #
 # SystemVerilog development tools
