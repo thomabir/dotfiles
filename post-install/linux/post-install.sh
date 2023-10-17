@@ -40,6 +40,7 @@ exec "$SHELL"
 pyenv install 3.12
 pyenv global 3.12
 pip install numpy scipy matplotlib astropy pandas
+pip install --upgrade pip
 
 # Iosevka font
 cd ~/Downloads
