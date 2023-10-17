@@ -66,11 +66,6 @@ cd emacs-29.1
 make -j$(nproc)
 sudo make install
 
-# configure
-# cd ~/.config
-# rm emacs if exists
-# git clone ...
-
 # clean up
 rm -r ~/Downloads/emacs-29.1/
 
