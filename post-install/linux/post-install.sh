@@ -105,7 +105,22 @@ rm -rf ~/Downloads/emacs-29.1/
 # see Xilinx website, login required
 
 # verilator
-sudo apt -y install verilator
+# (don't use apt to install verilator, I get weird errors)
+sudo apt -y install git help2man perl python3 make autoconf g++ flex bison ccache
+sudo apt -y install libgoogle-perftools-dev numactl perl-doc mold
+sudo apt -y install libfl2  # Ubuntu only (ignore if gives error)
+sudo apt -y install libfl-dev  # Ubuntu only (ignore if gives error)
+sudo apt -y install zlibc zlib1g zlib1g-dev  # Ubuntu only (ignore if gives error)
+cd Downloads
+git clone https://github.com/verilator/verilator
+unset VERILATOR_ROOT
+cd verilator
+git checkout master
+autoconf
+./configure
+make -j `nproc`  # if error, try just 'make'
+sudo make install
+
 
 # bazel (to build verible)
 # instructions: https://bazel.build/install/ubuntu
