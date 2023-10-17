@@ -42,6 +42,9 @@ pyenv global 3.12
 pip install numpy scipy matplotlib astropy pandas
 pip install --upgrade pip
 
+# Latex
+sudo apt install texlive-full
+
 # Iosevka font
 cd ~/Downloads
 wget https://github.com/be5invis/Iosevka/releases/download/v26.3.3/super-ttc-iosevka-26.3.3.zip
