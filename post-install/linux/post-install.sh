@@ -27,6 +27,20 @@ rm -rf roam
 sudo apt --assume-yes install build-essential cmake unzip
 mkdir ~/code
 
+# Python with pyenv
+# instructions: https://github.com/pyenv/pyenv#installation
+curl https://pyenv.run | bash
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.profile
+echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.profile
+echo 'eval "$(pyenv init -)"' >> ~/.profile
+exec "$SHELL"
+pyenv install 3.12
+pyenv global 3.12
+pip install numpy scipy matplotlib astropy pandas
+
 # Iosevka font
 cd ~/Downloads
 wget https://github.com/be5invis/Iosevka/releases/download/v26.3.3/super-ttc-iosevka-26.3.3.zip
