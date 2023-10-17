@@ -122,3 +122,6 @@ bazel run -c opt :install -- -s /usr/local/bin
 bazel test -c opt //...
 rm -rf ~/Downloads/verible
 
+# cocotb
+pip install cocotb
+
