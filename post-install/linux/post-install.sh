@@ -27,6 +27,13 @@ rm -rf roam
 sudo apt --assume-yes install build-essential cmake unzip
 mkdir ~/code
 
+#
+# Gnome desktop
+#
+
+# turn off mouse acceleration
+gsettings set org.gnome.desktop.peripherals.mouse accel-profile 'flat'
+
 # Python with pyenv
 # instructions: https://github.com/pyenv/pyenv#installation
 curl https://pyenv.run | bash
