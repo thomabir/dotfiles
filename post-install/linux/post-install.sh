@@ -24,7 +24,7 @@ git clone https://github.com/thomabir/roam.git
 rm -rf roam
 
 # basics
-sudo apt --assume-yes install build-essential cmake unzip
+sudo apt --assume-yes install build-essential cmake unzip curl
 mkdir ~/code
 
 #
